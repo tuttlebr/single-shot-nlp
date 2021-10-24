@@ -1,0 +1,6 @@
+transformers~=3.3
+numpy~=1.19
+fastapi~=0.61
+uvicorn~=0.11
+psutil~=5.7
+pybuilder~=0.12
