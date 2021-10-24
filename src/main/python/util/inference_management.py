@@ -62,9 +62,9 @@ class ZeroComprehensionEngine(object):
         logging.debug(zero_classifier_response)
         sentiment_classifier_response = self.sentiment_classifier(comment_text)
         response = dict(
-            zip(zero_classifier_response["labels"], zero_classifier_response["scores"],)
+            zip(zero_classifier_response["premise"]["labels"], zero_classifier_response["premise"]["scores"],)
         )
-        response["input_str"] = zero_classifier_response["sequence"]
+        response["input_str"] = zero_classifier_response["premise"]["sequence"]
         response["sentiment_label"] = sentiment_classifier_response[0]["label"]
         response["sentiment_confidence"] = sentiment_classifier_response[0]["score"]
         return response
